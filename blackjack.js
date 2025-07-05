@@ -257,6 +257,7 @@ function playerHit() {
     updateScores();
 
     if (calculateScore(playerHand) > 21) {
+        updateCardCount(getCardValue(dealerHand[1]));
         endGame("You bust! The House wins.")
     }
 }
@@ -295,9 +296,9 @@ function endGame(message) {
     gameOver = true;
     hitButton.style.display = "none";
     standButton.style.display = "none";
-    dealerScoreDisplay.textContent = "Score: " + calculateScore(dealerHand);
     renderCards(dealerHand, dealerCards);
     messageDisplay.textContent = message;
     dealNewHand.style.display = "block";
     restartGameButton.style.display = "block";
+    updateScores();
 }
