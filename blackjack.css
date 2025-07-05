@@ -1,0 +1,131 @@
+body {
+    background-color: rgb(38, 143, 38);
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.card {
+    width: 60px;
+    height: 90px;
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card_count{
+    font-weight: bold;
+    visibility: hidden;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#card_count.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#card_count_area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#card_count_button{
+    display: none;
+    justify-content: center;
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+#dealer_area {
+    text-align: center;
+}
+
+#dealer_cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#dealer_score {
+    font-weight: bold;
+}
+
+#deck_count {
+    width: 40px;
+    margin-right: 7.5px;
+    transform: scale(1.2);
+}
+
+#deck_selection {
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16pt;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+}
+
+#deck_submit {
+    width: 55px;
+    margin-left: 7.5px;
+    transform: scale(1.25);
+}
+
+#error_message {
+    display: none;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16pt;
+    align-items: center;
+    justify-content: center;
+}
+
+#game_area {
+    display: none;
+}
+
+#new_game_controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+#message {
+    font-weight: bold;
+}
+
+#player_area {
+    text-align: center;
+}
+
+#player_cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#player_score {
+    font-weight: bold;
+}

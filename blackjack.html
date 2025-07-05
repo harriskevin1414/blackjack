@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="blackjack.css" />
+</head>
+
+<body>
+  <div id="deck_selection">
+    <h2>Welcome to Blackjack!</h2>
+    <p><b>Casinos typically combine betweeen 1 and 8 decks at a blackjack table.</p>
+    <p> Please input the number of decks you would like to play with today.</b></p>
+    <input type="text" id="deck_count" />
+    <button id="deck_submit">Submit</button>
+  </div>
+  <div id="error_message">
+    <p><b>You have input an invalid number of decks. This game will default to a single deck.</b></p>
+  </div>
+  <div id="game_area">
+    <div id="dealer_area">
+      <h2>Dealer's Hand</h2>
+      <div id="dealer_cards"></div>
+      <p id="dealer_score">Score: ?</p>
+    </div>
+
+    <div id="player_area">
+      <h2>Your Hand</h2>
+      <div id="player_cards"></div>
+      <p id="player_score">Score: 0</p>
+    </div>
+
+    <div id="controls">
+      <button id="start_button">Start Game</button>
+      <button id="shuffle_button" disabled>Shuffle Deck</button>
+      <audio id = "shuffle_audio" src = "bridge_shuffle_audio.mp3" preload="auto"></audio>
+      <button id="hit_button" disabled>Hit</button>
+      <button id="stand_button" disabled>Stand</button>
+    </div>
+
+    <p id="message"></p>
+    <div id="new_game_controls">
+      <button id="deal_new_button">Deal New Hand</button>
+      <button id=restart_button>Restart Game</button>
+    </div>
+
+    <div id="card_count_area">
+      <br>
+      <div id="card_count">Count: 0</div>
+      <br>
+      <button id="card_count_button" disabled>Toggle Card Counter</button>
+    </div>
+  </div>
+  </div>
+  <script src="blackjack.js"></script>
+</body>
+
+</html>
