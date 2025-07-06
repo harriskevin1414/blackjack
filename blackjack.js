@@ -20,6 +20,7 @@ const deckSelection = document.getElementById("deck_selection");
 const gameArea = document.getElementById("game_area");
 const dealerArea = document.getElementById("dealer_area");
 const playerArea = document.getElementById("player_area");
+const cardCountArea = document.getElementById("card_count_area");
 const playerCards = document.getElementById("player_cards");
 const dealerCards = document.getElementById("dealer_cards");
 const playerScoreDisplay = document.getElementById("player_score");
@@ -231,6 +232,7 @@ function gameRestart() {
 
 //GAME EXECUTION
 function startGame() {
+    cardCountArea.style.display = "flex";
     shuffleButton.style.display = "none";
     startGameButton.style.display = "none";
     showHitStand();
