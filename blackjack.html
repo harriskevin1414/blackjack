@@ -22,13 +22,13 @@
     </div>
     <div id="game_area">
       <div id="dealer_area">
-        <h1>Dealer's Hand</h1>
+        <div id = "dealer_header"><h1>Dealer's Hand</h1></div>
         <div id="dealer_cards"></div>
         <p id="dealer_score">Score: ?</p>
       </div>
 
       <div id="player_area">
-        <h1>Your Hand</h1>
+        <div id = "player_header"><h1>Your Hand</h1></div>
         <div id="player_cards"></div>
         <p id="player_score">Score: 0</p>
       </div>
@@ -43,15 +43,15 @@
 
       <p id="message"></p>
       <div id="new_game_controls">
-        <button id="deal_new_button">Deal New Hand</button>
-        <button id=restart_button>Restart Game</button>
-      </div>
-
-      <div id="card_count_area">
-        <br>
-        <div id="card_count">Count: 0</div>
-        <br>
-        <button id="card_count_button" disabled>Toggle Card Counter</button>
+        <div class = "spacer"></div>
+        <div id="main_buttons">
+          <button id="deal_new_button">Deal New Hand</button>
+          <button id=restart_button>Restart Game</button>
+        </div>
+        <div id="card_count_area">
+          <div id="card_count">Count: 0</div>
+          <button id="card_count_button" disabled>Toggle Card Counter</button>
+        </div>
       </div>
     </div>
   </div>

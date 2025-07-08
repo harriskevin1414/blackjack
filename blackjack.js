@@ -26,7 +26,6 @@ const dealerCards = document.getElementById("dealer_cards");
 const playerScoreDisplay = document.getElementById("player_score");
 const dealerScoreDisplay = document.getElementById("dealer_score");
 const cardCountScore = document.getElementById("card_count");
-const cardCountDisplay = document.getElementById("card_count_area");
 const messageDisplay = document.getElementById("message");
 const dealNewHand = document.getElementById("deal_new_button");
 const restartGameButton = document.getElementById("restart_button");
@@ -92,7 +91,8 @@ function showHitStand() {
 
 //show game area
 function showGameArea() {
-    gameArea.style.display = "block";
+    gameArea.style.visibility = "visible";
+    messageDisplay.style.visibility = "hidden";
     shuffleButton.disabled = false;
     hideGameButtons();
     deck = createDeck();
@@ -100,7 +100,7 @@ function showGameArea() {
 
 //show card count
 function revealCardCount() {
-    cardCountDisplay.style.display = "flex";
+    cardCountArea.classList.toggle("visible");
     cardCountScore.classList.toggle("visible");
 }
 
@@ -205,7 +205,8 @@ function calculateScore(hand) {
 //update scores
 function updateScores() {
     playerScoreDisplay.textContent = "Score: " + calculateScore(playerHand);
-    cardCountScore.textContent = "Count: " + cardCount;
+    const formattedCardCount = cardCount > 0 ? "+" + cardCount : cardCount;
+    cardCountScore.textContent = "Count: " + formattedCardCount;
     if (gameOver) dealerScoreDisplay.textContent = "Score " + calculateScore(dealerHand);
     else dealerScoreDisplay.textContent = "Score ?"
 }
@@ -220,6 +221,7 @@ function updateCardCount(cardValue) {
 function dealNew() {
     playerHand = [];
     dealerHand = [];
+    messageDisplay.style.visibility = "hidden";
     dealNewHand.style.display = "none";
     restartGameButton.style.display = "none";
     startGame();
@@ -232,7 +234,8 @@ function gameRestart() {
 
 //GAME EXECUTION
 function startGame() {
-    cardCountArea.style.display = "flex";
+    cardCountArea.style.visibility = "visible";
+    cardCountArea.style.opacity = "1";
     shuffleButton.style.display = "none";
     startGameButton.style.display = "none";
     showHitStand();
@@ -300,7 +303,10 @@ function endGame(message) {
     standButton.style.display = "none";
     renderCards(dealerHand, dealerCards);
     messageDisplay.textContent = message;
-    dealNewHand.style.display = "block";
-    restartGameButton.style.display = "block";
+    dealNewHand.style.display = "flex";
+    restartGameButton.style.display = "flex";
+    dealNewHand.style.visibility = "visible";
+    restartGameButton.style.visibility = "visible";
+    messageDisplay.style.visibility ="visible";
     updateScores();
 }
