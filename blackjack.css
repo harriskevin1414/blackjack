@@ -12,7 +12,7 @@ body {
     height: 90px;
     border: 2.5px solid black;
     border-radius: 6px;
-    background-color: white;
+    background-color: whitesmoke;
     color: black;
     font-size: 1.2em;
     font-weight: bold;
@@ -24,10 +24,10 @@ body {
 #card_count {
     font-weight: bold;
     visibility: hidden;
-    background-color: white;
+    background-color: whitesmoke;
     font-size: 20px;
     height: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 27px;
     margin-top: 10px;
     border: 3px solid;
     border-radius: 12px;
@@ -58,7 +58,7 @@ body {
     border: 2px solid;
     border-radius: 6px;
     border-color: black;
-    margin-bottom: 68%;
+    margin-bottom: 63%;
 }
 
 #controls {
@@ -69,6 +69,7 @@ body {
     gap: 5px;
     width: fit-content;
     margin: auto;
+    padding: 10px;
 }
 
 #deal_new_button {
@@ -92,6 +93,7 @@ body {
     width: fit-content;
     height: 225px;
     margin: auto;
+    padding: 10px;
 }
 
 #dealer_cards {
@@ -102,14 +104,27 @@ body {
     margin: auto;
 }
 
-#dealer_score {
+#dealer_header{
     font-weight: bold;
     font-size: 25px;
-    background-color: white;
+    background-color: whitesmoke;
     border: 2px solid;
     border-color: black;
     border-radius: 10px;
-    padding: 7px;
+    padding: 6px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#dealer_score {
+    font-weight: bold;
+    font-size: 25px;
+    background-color: whitesmoke;
+    border: 2px solid;
+    border-color: black;
+    border-radius: 10px;
+    padding: 6px;
+    margin-top: 10px;;
 }
 
 #deck_count {
@@ -119,26 +134,51 @@ body {
 }
 
 #deck_selection {
+    display: flex;
+    flex-direction: column;
     margin-top: 50%;
     font-size: 18pt;
     align-items: center;
     justify-content: center;
-    padding: 300px;
+    padding: 200px;
 }
 
+#deck_selection_text{
+    background-color: whitesmoke;
+    border: 3px solid;
+    border-radius: 12px;
+    border-color: black;
+}
 #deck_submit {
+    display: flex;
+    flex-direction: row;
     width: 55px;
     margin-left: 7.5px;
     transform: scale(1.25);
 }
 
+#deck_submit_container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
 #error_message {
     display: none;
-    margin: auto;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16pt;
+    flex-direction: column;
+    margin-top: 50%;
+    margin-left: 7%;
+    font-size: 18pt;
     align-items: center;
     justify-content: center;
+    background-color: whitesmoke;
+    border: 3px solid;
+    border-radius: 12px;
+    border-color: black;
+    width: fit-content;
+    height: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #game_area {
@@ -150,6 +190,7 @@ body {
     height: 90vh;
     flex-direction: column;
     margin: auto;
+    padding: 10px;
 }
 
 #hit_button {
@@ -185,6 +226,7 @@ body {
     margin-left: 14%;
     width: 20vw;
     gap: 5px;
+    padding-top: 15px;
 }
 
 #message {
@@ -198,7 +240,8 @@ body {
     height: fit-content;
     font-weight: bold;
     font-size: 25px;
-    background-color: white;
+    padding-bottom: 15px;
+    background-color: whitesmoke;
     border: 2px solid;
     border-color: black;
     border-radius: 10px;
@@ -206,14 +249,17 @@ body {
 }
 
 #play_space {
-    background-color: rgb(38, 143, 38);
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border: solid;
     border-color: brown;
     border-width: 5px;
     border-radius: 20px;
     margin: auto;
     width: 70vw;
-    height: 93vh;
+    height: 92vh;
     text-align: center;
     flex-direction: column;
     align-items: stretch;
@@ -234,6 +280,7 @@ body {
     width: fit-content;
     height: 225px;
     margin: auto;
+    padding-top: 20px;
 }
 
 #player_cards {
@@ -244,14 +291,27 @@ body {
     margin: auto;
 }
 
-#player_score {
+#player_header{
     font-weight: bold;
     font-size: 25px;
-    background-color: white;
+    background-color: whitesmoke;
     border: 2px solid;
     border-color: black;
     border-radius: 10px;
-    padding: 7px;
+    padding: 6px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+
+}
+
+#player_score {
+    font-weight: bold;
+    font-size: 25px;
+    background-color: whitesmoke;
+    border: 2px solid;
+    border-color: black;
+    border-radius: 10px;
+    padding: 6px;
 }
 
 #restart_button {

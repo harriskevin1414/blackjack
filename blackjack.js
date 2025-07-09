@@ -58,11 +58,11 @@ function deckSubmit() {
     deckSelection.style.display = "none";
 
     if (isNaN(parseInt(deckCountInput.value))) {
-        errorMessage.style.display = "block";
+        errorMessage.style.display = "flex";
         setTimeout(() => {
             errorMessage.style.display = "none";
             showGameArea();
-        }, 3500)
+        }, 4000)
     } else if (parseInt(deckCountInput.value) > 8) {
         numberOfDecks = 8;
         showGameArea();
@@ -91,7 +91,8 @@ function showHitStand() {
 
 //show game area
 function showGameArea() {
-    gameArea.style.visibility = "visible";
+    startGameButton.style.visibility ="visible";
+    shuffleButton.style.visibility = "visible";
     messageDisplay.style.visibility = "hidden";
     shuffleButton.disabled = false;
     hideGameButtons();
@@ -107,7 +108,7 @@ function revealCardCount() {
 //create deck
 function createDeck() {
     let values = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
-    let suits = ['♠', '♥', '♦', '♣'];
+    let suits = ['spades', 'hearts', 'diamonds', 'clubs'];
     let newDeck = [];
     let iterations = 100;
 
@@ -169,20 +170,75 @@ function getCardValue(card) {
 function renderCards(hand, element) {
     element.innerHTML = "";
     for (let card of hand) {
-        const cardDiv = document.createElement("div");
+        const cardContainer = document.createElement("div")
+        const cardImage = document.createElement("img");
 
-        if (card.hidden) {
-            const cardBack = document.createElement("img");
-            cardBack.src = "card_back.png";
-            cardBack.style.width = "100%";
-            cardBack.style.height = "100%";
-            cardDiv.appendChild(cardBack);
-        } else {
-            cardDiv.textContent = `${card.value} ${card.suit}`
-        }
-        cardDiv.classList.add("card");
-        element.appendChild(cardDiv);
+        if (card.hidden) cardImage.src = "./card_images/card_back.png";
+        else cardImage.src = getCardImage(card.value, card.suit);
+
+        cardImage.style.width = "75px";
+        cardImage.style.height = "105px";
+        cardImage.classList.add("card")
+        
+        cardContainer.appendChild(cardImage);
+        element.appendChild(cardContainer);
     }
+}
+
+//get card image
+function getCardImage(value, suit){
+    if (value === "A" && suit === "hearts") return "./card_images/hearts_ace.png";
+    if (value === "A" && suit === "spades") return "./card_images/spades_ace.png";
+    if (value === "A" && suit === "diamonds") return "./card_images/diamonds_ace.png";
+    if (value === "A" && suit === "clubs") return "./card_images/clubs_ace.png";
+    if (value === 2 && suit === "hearts") return "./card_images/hearts_2.png";
+    if (value === 2 && suit === "spades") return "./card_images/spades_2.png";
+    if (value === 2 && suit === "diamonds") return "./card_images/diamonds_2.png";
+    if (value === 2 && suit === "clubs") return "./card_images/clubs_2.png";
+    if (value === 3 && suit === "hearts") return "./card_images/hearts_3.png";
+    if (value === 3 && suit === "spades") return "./card_images/spades_3.png";
+    if (value === 3 && suit === "diamonds") return "./card_images/diamonds_3.png";
+    if (value === 3 && suit === "clubs") return "./card_images/clubs_3.png";
+    if (value === 4 && suit === "hearts") return "./card_images/hearts_4.png";
+    if (value === 4 && suit === "spades") return "./card_images/spades_4.png";
+    if (value === 4 && suit === "diamonds") return "./card_images/diamonds_4.png";
+    if (value === 4 && suit === "clubs") return "./card_images/clubs_4.png";
+    if (value === 5 && suit === "hearts") return "./card_images/hearts_5.png";
+    if (value === 5 && suit === "spades") return "./card_images/spades_5.png";
+    if (value === 5 && suit === "diamonds") return "./card_images/diamonds_5.png";
+    if (value === 5 && suit === "clubs") return "./card_images/clubs_5.png";
+    if (value === 6 && suit === "hearts") return "./card_images/hearts_6.png";
+    if (value === 6 && suit === "spades") return "./card_images/spades_6.png";
+    if (value === 6 && suit === "diamonds") return "./card_images/diamonds_6.png";
+    if (value === 6 && suit === "clubs") return "./card_images/clubs_6.png";
+    if (value === 7 && suit === "hearts") return "./card_images/hearts_7.png";
+    if (value === 7 && suit === "spades") return "./card_images/spades_7.png";
+    if (value === 7 && suit === "diamonds") return "./card_images/diamonds_7.png";
+    if (value === 7 && suit === "clubs") return "./card_images/clubs_7.png";
+    if (value === 8 && suit === "hearts") return "./card_images/hearts_8.png";
+    if (value === 8 && suit === "spades") return "./card_images/spades_8.png";
+    if (value === 8 && suit === "diamonds") return "./card_images/diamonds_8.png";
+    if (value === 8 && suit === "clubs") return "./card_images/clubs_8.png";
+    if (value === 9 && suit === "hearts") return "./card_images/hearts_9.png";
+    if (value === 9 && suit === "spades") return "./card_images/spades_9.png";
+    if (value === 9 && suit === "diamonds") return "./card_images/diamonds_9.png";
+    if (value === 9 && suit === "clubs") return "./card_images/clubs_9.png";
+    if (value === 10 && suit === "hearts") return "./card_images/hearts_10.png";
+    if (value === 10 && suit === "spades") return "./card_images/spades_10.png";
+    if (value === 10 && suit === "diamonds") return "./card_images/diamonds_10.png";
+    if (value === 10 && suit === "clubs") return "./card_images/clubs_10.png";
+    if (value === "J" && suit === "hearts") return "./card_images/hearts_jack.png";
+    if (value === "J" && suit === "spades") return "./card_images/spades_jack.png";
+    if (value === "J" && suit === "diamonds") return "./card_images/diamonds_jack.png";
+    if (value === "J" && suit === "clubs") return "./card_images/clubs_jack.png";
+    if (value === "Q" && suit === "hearts") return "./card_images/hearts_queen.png";
+    if (value === "Q" && suit === "spades") return "./card_images/spades_queen.png";
+    if (value === "Q" && suit === "diamonds") return "./card_images/diamonds_queen.png";
+    if (value === "Q" && suit === "clubs") return "./card_images/clubs_queen.png";
+    if (value === "K" && suit === "hearts") return "./card_images/hearts_king.png";
+    if (value === "K" && suit === "spades") return "./card_images/spades_king.png";
+    if (value === "K" && suit === "diamonds") return "./card_images/diamonds_king.png";
+    if (value === "K" && suit === "clubs") return "./card_images/clubs_king.png";
 }
 
 //calculate score
@@ -234,6 +290,7 @@ function gameRestart() {
 
 //GAME EXECUTION
 function startGame() {
+    gameArea.style.visibility = "visible";
     cardCountArea.style.visibility = "visible";
     cardCountArea.style.opacity = "1";
     shuffleButton.style.display = "none";

@@ -11,49 +11,56 @@
 <body>
   <div id="play_space">
     <div id="deck_selection">
+      <div id="deck_selection_text">
       <h2>Welcome to Blackjack!</h2>
       <p><b>Casinos typically combine betweeen 1 and 8 decks at a blackjack table.</p>
       <p> Please input the number of decks you would like to play with today.</b></p>
+    </div>
+    <div id="deck_submit_container">
       <input type="text" id="deck_count" />
       <button id="deck_submit">Submit</button>
     </div>
-    <div id="error_message">
-      <p><b>You have input an invalid number of decks. This game will default to a single deck.</b></p>
+  </div>
+  <div id="error_message">
+    <p><b>You have input an invalid number of decks. This game will default to a single deck.</b></p>
+  </div>
+  <div id="game_area">
+    <div id="dealer_area">
+      <div id="dealer_header">
+        Dealer's Hand
+      </div>
+      <div id="dealer_cards"></div>
+      <p id="dealer_score">Score: ?</p>
     </div>
-    <div id="game_area">
-      <div id="dealer_area">
-        <div id = "dealer_header"><h1><u>Dealer's Hand</u></h1></div>
-        <div id="dealer_cards"></div>
-        <p id="dealer_score">Score: ?</p>
-      </div>
 
-      <div id="player_area">
-        <div id = "player_header"><h1><u>Your Hand</u></h1></div>
-        <div id="player_cards"></div>
-        <p id="player_score">Score: 0</p>
+    <div id="player_area">
+      <div id="player_header">
+        Your Hand
       </div>
+      <div id="player_cards"></div>
+      <p id="player_score">Score: 0</p>
+    </div>
+    <div id="controls">
+      <button id="start_button">Start Game</button>
+      <button id="shuffle_button" disabled>Shuffle Deck</button>
+      <audio id="shuffle_audio" src="bridge_shuffle_audio.mp3" preload="auto"></audio>
+      <button id="hit_button" disabled>Hit</button>
+      <button id="stand_button" disabled>Stand</button>
+    </div>
 
-      <div id="controls">
-        <button id="start_button">Start Game</button>
-        <button id="shuffle_button" disabled>Shuffle Deck</button>
-        <audio id="shuffle_audio" src="bridge_shuffle_audio.mp3" preload="auto"></audio>
-        <button id="hit_button" disabled>Hit</button>
-        <button id="stand_button" disabled>Stand</button>
+    <p id="message"></p>
+    <div id="new_game_controls">
+      <div class="spacer"></div>
+      <div id="main_buttons">
+        <button id="deal_new_button">Deal New Hand</button>
+        <button id=restart_button>Restart Game</button>
       </div>
-
-      <p id="message"></p>
-      <div id="new_game_controls">
-        <div class = "spacer"></div>
-        <div id="main_buttons">
-          <button id="deal_new_button">Deal New Hand</button>
-          <button id=restart_button>Restart Game</button>
-        </div>
-        <div id="card_count_area">
-          <div id="card_count">Count: 0</div>
-          <button id="card_count_button" disabled>Toggle Card Counter</button>
-        </div>
+      <div id="card_count_area">
+        <div id="card_count">Count: 0</div>
+        <button id="card_count_button" disabled>Toggle Card Counter</button>
       </div>
     </div>
+  </div>
   </div>
   <script src="blackjack.js"></script>
 </body>
