@@ -1,1 +1,1 @@
-This is just a simple HTML / CSS / Javascript coding project to teach myself new concepts in programming. A simple game of blackjack with a toggleable card counter.
+This is just a simple HTML / CSS / Javascript coding project to teach myself new concepts in programming. A simple game of blackjack with a toggleable card counter. All card images and backgrounds have been licenesed under free-use.
